@@ -5,10 +5,6 @@ from pymongo import MongoClient
 
 # вообще-то, это не совсем конфиг. Сюда будем всякое полезное складывать. Это, скорее, файл с утилитами
 
-api_ai = os.environ['apiai']
-beebot_token = os.environ['TELEGRAM_TOKEN']
-waifubot_token = os.environ['waifu']
-neirobot_token = os.environ['neiro']
 dndbot_token = os.environ['dnd']
 mongo_client = MongoClient(os.environ['database'])
 
