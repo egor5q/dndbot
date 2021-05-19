@@ -493,6 +493,7 @@ def dell(m):
             
 @dnd.message_handler()
 def msgs(m):
+  try:
     user = createuser2(m)
     
     if user['cgame'] != None:
@@ -882,7 +883,9 @@ def msgs(m):
             dnd.send_message(441399484, traceback.format_exc())
             dnd.send_message(m.chat.id, 'Игры не существует! Отменяю добавление юнита.')
             users.update_one({'id':user['id']},{'$set':{'current_game':None, 'current_team':None}})
-    
+  except:
+    print(traceback.format_exc())
+    dnd.send_message(m.chat.id, 'error!')
     
 
 
